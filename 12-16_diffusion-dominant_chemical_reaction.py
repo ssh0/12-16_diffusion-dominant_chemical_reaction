@@ -19,10 +19,7 @@ def main_rw_d1(L, N, pmax):
         # 1 step ==============================================================
         for n in xrange(N):
             if np_sum(lattice[n]):
-                if random() > 0.5:
-                    lattice[n] = np_roll(lattice[n], 1)
-                else:
-                    lattice[n] = np_roll(lattice[n], -1)
+                lattice[n] = np_roll(lattice[n], 1 if random() > 0.5 else -1)
 
         count = np_sum(lattice, axis=0)
 
